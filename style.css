@@ -13,7 +13,7 @@ html, body {
 
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-size: 1.5em;
+    font-size: min(1.5em, 3vw);
     background-color: #15001D;
     width: 100vw;
     position: relative;
@@ -69,6 +69,10 @@ video {
     text-shadow: 0 0 .1em #000000cc;
 }
 
+.overlay .inner {
+    font-size: min(1em, 7vw);
+}
+
 .main {
     width: 100%;
     display: flex;
@@ -81,6 +85,7 @@ video {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1000px;
 }
 
 .main h1 {
@@ -97,7 +102,7 @@ video {
     font-size: 1.3em;
     text-align: center;
     margin-top: .7em;
-    padding: 0 9em;
+    padding: 0 1em;
     font-weight: 400;
 }
 
@@ -107,7 +112,7 @@ video {
 
 code {
     border: 2px solid white;
-    font-size: 1.3em;
+    font-size: min(1.3em, 1.7vw);
     margin-top: 2em;
     padding: 1.5em 0;
     width: 55em;
