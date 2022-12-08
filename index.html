@@ -33,8 +33,18 @@
             <p>To add popup.js to your web application, add the following code snippet <span
                     class="underline">before</span>
                 your script.</p>
-            <code onclick="copyCode()"
-                id="copy">&lt;script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.3.0/popup.min.js"&gt;&lt;/script&gt;</code>
+            <code id="install"
+                onclick="copyCode()">&lt;script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.3.0/popup.min.js"&gt;&lt;/script&gt;</code>
+            <h1>Quickstart</h1>
+            <p>Create a new popup by instantiating the Popup class:</p>
+            <code class="block"><pre>
+const myPopup = new Popup({
+    id: "my-popup",
+    title: "My First Popup",
+    content: `
+        An example popup.
+        Supports multiple lines.`,
+});</pre></code>
         </div>
     </div>
 </body>

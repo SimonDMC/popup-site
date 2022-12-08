@@ -1,5 +1,5 @@
-async function copyCode() {
-    const code = document.getElementById("copy");
+async function copyCode(e) {
+    let code = e.target;
     let content = code.innerHTML;
     await navigator.clipboard.writeText(
         content.replace(/&lt;/g, "<").replace(/&gt;/g, ">")

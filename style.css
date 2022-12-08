@@ -112,10 +112,8 @@ video {
 
 code {
     border: 2px solid white;
-    font-size: min(1.3em, 1.7vw);
     margin-top: 2em;
-    padding: 1.5em 0;
-    width: 55em;
+    width: 52em;
     text-align: center;
     border-radius: .5em;
     cursor: pointer;
@@ -124,4 +122,43 @@ code {
 
 code:hover {
     background-color: #1e0027;
+}
+
+code#install {
+    box-shadow: 0 0 .5em #ffffff80;
+    font-size: min(1.3em, 1.7vw);
+    padding: 1.5em 0;
+}
+
+code.block {
+    font-size: 1.2em;
+    text-align: left;
+    width: 25em;
+    padding: 1em 0;
+    padding-left: 1.5em;
+}
+
+/* if screen is less than 1:1 */
+@media (max-aspect-ratio: 1/1) {
+    code#install {
+        font-size: 1.5em;
+        padding: 1em 1em;
+    }
+
+    code {
+        width: 90vw;
+        overflow-x: scroll;
+        white-space: nowrap;
+        margin-top: 1.5em;
+    }
+
+    video {
+        scale: 1.8;
+        margin: 3.9em 0;
+    }
+
+    .overlay {
+        scale: 1.8;
+        margin-top: .98em;
+    }
 }
