@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c7b17cb045.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
     <title>popup.js</title>
 </head>
@@ -13,9 +15,14 @@
 <body>
     <div class="navbar">
         <div class="container">
-            <a href="/">Home</a>
-            <a href="https://popup-js.rtfd.io" target="_blank">Documentation</a>
-            <a href="./examples">Examples</a>
+            <div class="left">
+                <a href="#">Home</a>
+                <a href="./examples">Examples</a>
+                <a href="https://popup-js.rtfd.io" target="_blank">Documentation</a>
+            </div>
+            <div class="right">
+                <a href="https://github.com/SimonDMC/popup-js" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
     </div>
     <video src="./popups.mp4" autoplay muted loop></video>
@@ -34,7 +41,7 @@
                     class="underline">before</span>
                 your script.</p>
             <code id="install"
-                onclick="copyCode()">&lt;script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.3.0/popup.min.js"&gt;&lt;/script&gt;</code>
+                onclick="copyCode()">&lt;script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.3.1/popup.min.js"&gt;&lt;/script&gt;</code>
             <h1>Quickstart</h1>
             <p>Create a new popup by instantiating the <code class="inline">Popup</code> class:</p>
             <code class="block"><pre>

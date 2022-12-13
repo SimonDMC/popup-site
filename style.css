@@ -33,10 +33,21 @@ body {
 }
 
 .navbar .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+}
+
+.navbar .left {
     display: flex;
     justify-content: flex-start;
-    padding-left: 2em;
     gap: 2em
+}
+
+.navbar .right {
+    font-size: 1.4em;
 }
 
 .navbar a {
@@ -46,6 +57,11 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
+    transition: filter .2s;
+}
+
+.navbar a:hover {
+    filter: drop-shadow(0 0 .2em #FFFFFF88);
 }
 
 video {
@@ -160,6 +176,61 @@ code.block {
 .footer a {
     color: white;
     text-decoration: none;
+}
+
+h2 {
+    margin-top: 1.1em;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.showcase {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-top: .5em;
+}
+
+.showcase button {
+    font-family: inherit;
+    font-size: 1.2em;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: .3em .5em;
+    border-radius: .3em;
+    cursor: pointer;
+}
+
+.showcase a {
+    font-size: 1.2em;
+    text-shadow: none;
+}
+
+.showcase * {
+    transition: filter .2s;
+}
+
+.showcase *:hover {
+    filter: drop-shadow(0 0 .2em #FFFFFF88);
+}
+
+.popup.override .custom-space-out {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.popup.board {
+    text-shadow: 0 0 .3em #000000bb;
+}
+
+.popup.board button {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    filter: drop-shadow(0 0 .2em #000000bb);
+    margin-top: 1em;
 }
 
 /* if screen is less than 1:1 */
