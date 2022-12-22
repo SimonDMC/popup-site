@@ -68,6 +68,14 @@ const popups = [
             filter: drop-shadow(0 0 .2em #000000bb);
             margin-top: 1em;
         }`,
+        loadCallback: () => {
+            /* button functionality */
+            document
+                .querySelector(".popup.board button")
+                .addEventListener("click", () => {
+                    popups[2].hide();
+                });
+        },
     }),
     new Popup({
         id: "disclaimer",
@@ -116,6 +124,16 @@ const popups = [
             justify-content: center;
             gap: 1.5em;
         }`,
+        loadCallback: () => {
+            /* button functionality */
+            document
+                .querySelectorAll(".popup.override button")
+                .forEach((button) => {
+                    button.addEventListener("click", () => {
+                        popups[5].hide();
+                    });
+                });
+        },
     }),
 ];
 
@@ -123,23 +141,4 @@ let assignedClicks = false;
 
 function showPopup(index) {
     popups[index].show();
-
-    if (!assignedClicks) {
-        assignedClicks = true;
-        // add functionality to data conflict popup
-        document
-            .querySelectorAll(".popup.override button")
-            .forEach((button) => {
-                button.addEventListener("click", () => {
-                    popups[5].hide();
-                });
-            });
-
-        // add functionality to name conflict popup
-        document
-            .querySelector(".popup.board button")
-            .addEventListener("click", () => {
-                popups[2].hide();
-            });
-    }
 }
