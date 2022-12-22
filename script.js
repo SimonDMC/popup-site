@@ -24,7 +24,7 @@ const popups = [
         titleColor: "rgb(92, 0, 95)",
         titleMargin: "0",
         backgroundColor: "#ffebfe",
-        hideCallback: () => enableScroll(),
+        fixedHeight: true,
     }),
     new Popup({
         id: "download",
@@ -44,8 +44,6 @@ const popups = [
         fontSizeMultiplier: 1.2,
         titleMargin: "4%",
         underlineLinks: true,
-        dynamicHeight: true,
-        hideCallback: () => enableScroll(),
     }),
     new Popup({
         id: "board",
@@ -59,17 +57,23 @@ const popups = [
         This board name is already taken!
         Try picking a different one.
         {btn-ok}[Okay]`,
-        dynamicHeight: true,
         borderWidth: ".15em",
         borderColor: "#FFFFFF",
-        hideCallback: () => enableScroll(),
+        textShadow: "0 0 .3em #000000bb",
+        css: `
+        .popup.board button {
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            filter: drop-shadow(0 0 .2em #000000bb);
+            margin-top: 1em;
+        }`,
     }),
     new Popup({
         id: "disclaimer",
         title: "Disclaimer",
         content:
             "The original version of this puzzle was made to be played by two people - one person reading the manual and one entering information according to it - neither person is allowed to view the other's content. The manual is available {a-http://example.com}[here].",
-        dynamicHeight: true,
         sideMargin: "2.9vw",
         titleColor: "#fff",
         textColor: "#fff",
@@ -77,7 +81,6 @@ const popups = [
         closeColor: "#fff",
         fontSizeMultiplier: 1.2,
         linkColor: "#888",
-        hideCallback: () => enableScroll(),
     }),
     new Popup({
         id: "fishy",
@@ -89,7 +92,6 @@ const popups = [
         linkColor: "#FFF",
         underlineLinks: "true",
         fontSizeMultiplier: 1.2,
-        dynamicHeight: true,
         titleMargin: "2em",
         content: `
         This link seems very dangerous.
@@ -98,7 +100,6 @@ const popups = [
         {a-http://example.com}[click here to proceed].`,
         borderWidth: ".2em",
         borderColor: "#FFF",
-        hideCallback: () => enableScroll(),
     }),
     new Popup({
         id: "override",
@@ -107,10 +108,14 @@ const popups = [
           custom-space-out big-margin§{btn-refuse-override}[Local Data]{btn-accept-override}[Cloud Data]`,
         sideMargin: "1.5em",
         fontSizeMultiplier: "1.2",
-        dynamicHeight: true,
         backgroundColor: "#FFFEE3",
         allowClose: false,
-        hideCallback: () => enableScroll(),
+        css: `
+        .popup.override .custom-space-out {
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+        }`,
     }),
 ];
 
@@ -118,7 +123,6 @@ let assignedClicks = false;
 
 function showPopup(index) {
     popups[index].show();
-    disableScroll();
 
     if (!assignedClicks) {
         assignedClicks = true;
@@ -138,22 +142,4 @@ function showPopup(index) {
                 popups[2].hide();
             });
     }
-}
-
-/******************/
-
-function disableScroll() {
-    // Get the current page scroll position
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft =
-        window.pageXOffset || document.documentElement.scrollLeft;
-
-    // if any scroll is attempted, set this to the previous value
-    window.onscroll = function () {
-        window.scrollTo(scrollLeft, scrollTop);
-    };
-}
-
-function enableScroll() {
-    window.onscroll = function () {};
 }

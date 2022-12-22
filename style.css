@@ -215,24 +215,6 @@ h2 {
     filter: drop-shadow(0 0 .2em #FFFFFF88);
 }
 
-.popup.override .custom-space-out {
-    display: flex;
-    justify-content: center;
-    gap: 1.5em;
-}
-
-.popup.board {
-    text-shadow: 0 0 .3em #000000bb;
-}
-
-.popup.board button {
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-    filter: drop-shadow(0 0 .2em #000000bb);
-    margin-top: 1em;
-}
-
 /* if screen is less than 1:1 */
 @media (max-aspect-ratio: 1/1) {
     code#install {
