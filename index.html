@@ -13,41 +13,38 @@
 </head>
 
 <body>
-    <div class="scroll-wrapper">
-        <div class="navbar">
-            <div class="container">
-                <div class="left">
-                    <a href="#">Home</a>
-                    <a href="./examples">Examples</a>
-                    <a href="https://popup-js.rtfd.io" target="_blank">Documentation</a>
-                </div>
-                <div class="right">
-                    <a href="https://github.com/SimonDMC/popup-js" target="_blank"><i
-                            class="fa-brands fa-github"></i></a>
-                </div>
+    <div class="navbar">
+        <div class="container">
+            <div class="left">
+                <a href="#">Home</a>
+                <a href="./examples">Examples</a>
+                <a href="https://popup-js.rtfd.io" target="_blank">Documentation</a>
+            </div>
+            <div class="right">
+                <a href="https://github.com/SimonDMC/popup-js" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
-        <div class="overlay">
-            <video src="./popups.mp4" autoplay muted loop></video>
-            <div class="inner">popup-js</div>
-        </div>
-        <div class="main">
-            <div class="container">
-                <h1>About</h1>
-                <p>A sleek and highly customizable JavaScript library for generating full-screen infographic popups with
-                    minimal effort.</p>
-                <p>From warnings, through instructions, to confirmation popups, popup-js covers a wide range of use
-                    cases.
-                </p>
-                <h1>Installation</h1>
-                <p>To add popup-js to your web application, add the following code snippet <span
-                        class="underline">before</span>
-                    your script.</p>
-                <code id="install"
-                    onclick="copyCode()">&lt;script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.1/popup.min.js"&gt;&lt;/script&gt;</code>
-                <h1>Quickstart</h1>
-                <p>Create a new popup by instantiating the <code class="inline">Popup</code> class:</p>
-                <code class="block"><pre>
+    </div>
+    <video src="./popups.mp4" autoplay muted loop></video>
+    <div class="overlay">
+        <div class="inner">popup-js</div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <h1>About</h1>
+            <p>A sleek and highly customizable JavaScript library for generating full-screen infographic popups with
+                minimal effort.</p>
+            <p>From warnings, through instructions, to confirmation popups, popup-js covers a wide range of use cases.
+            </p>
+            <h1>Installation</h1>
+            <p>To add popup-js to your web application, add the following code snippet <span
+                    class="underline">before</span>
+                your script.</p>
+            <code id="install"
+                onclick="copyCode()">&lt;script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.0/popup.min.js"&gt;&lt;/script&gt;</code>
+            <h1>Quickstart</h1>
+            <p>Create a new popup by instantiating the <code class="inline">Popup</code> class:</p>
+            <code class="block"><pre>
 const myPopup = new Popup({
     id: "my-popup",
     title: "My First Popup",
@@ -56,25 +53,23 @@ const myPopup = new Popup({
         Supports multiple lines.`,
 });</pre></code>
 
-                <p>Display a popup on page load with the <code class="inline">showImmediately</code> parameter:</p>
-                <code class="block"><pre>
+            <p>Display a popup on page load with the <code class="inline">showImmediately</code> parameter:</p>
+            <code class="block"><pre>
 const myPopup = new Popup({
     ...
     showImmediately: true
 });</pre></code>
-                <p>or display it with a fade-in using the <code class="inline">.show()</code> method:</p>
-                <code class="block"><pre>
+            <p>or display it with a fade-in using the <code class="inline">.show()</code> method:</p>
+            <code class="block"><pre>
 button.addEventListener('click', () => {
     myPopup.show();
 });</pre></code>
-                <p>Check out the <a href="https://popup-js.rtfd.io/" target="_blank">documentation</a> for a
-                    comprehensive
-                    list of
-                    parameters and methods.</p>
-            </div>
+            <p>Check out the <a href="https://popup-js.rtfd.io/" target="_blank">documentation</a> for a comprehensive
+                list of
+                parameters and methods.</p>
         </div>
-        <div class="footer"><a href="https://simondmc.com">SimonDMC, 2022.</a></div>
     </div>
+    <div class="footer"><a href="https://simondmc.com">SimonDMC, 2022.</a></div>
 </body>
 
 </html>
