@@ -1,9 +1,7 @@
 async function copyCode() {
     let code = document.getElementById("install");
     let content = code.innerHTML;
-    await navigator.clipboard.writeText(
-        content.replace(/&lt;/g, "<").replace(/&gt;/g, ">")
-    );
+    await navigator.clipboard.writeText(content.replace(/&lt;/g, "<").replace(/&gt;/g, ">"));
     code.innerHTML = "Copied!";
     await new Promise((resolve) => setTimeout(resolve, 1000));
     code.innerHTML = content;
@@ -30,8 +28,8 @@ const popups = [
         id: "download",
         title: "Download Instructions",
         content: `
-            1. Download and install the {a-http://example.com}[CliCli] launcher.
-            2. Navigate to the {a-http://example.com}[game page] and click 'Open CliCli Platform'.
+            1. Download and install the {a-http://example.com}[launcher].
+            2. Navigate to the {a-http://example.com}[game page] and click 'Open Platform'.
             3. Press the 'Start Game' button to download and launch the game.
             `,
         backgroundColor: "#000",
@@ -70,11 +68,9 @@ const popups = [
         }`,
         loadCallback: () => {
             /* button functionality */
-            document
-                .querySelector(".popup.board button")
-                .addEventListener("click", () => {
-                    popups[2].hide();
-                });
+            document.querySelector(".popup.board button").addEventListener("click", () => {
+                popups[2].hide();
+            });
         },
     }),
     new Popup({
@@ -126,13 +122,11 @@ const popups = [
         }`,
         loadCallback: () => {
             /* button functionality */
-            document
-                .querySelectorAll(".popup.override button")
-                .forEach((button) => {
-                    button.addEventListener("click", () => {
-                        popups[5].hide();
-                    });
+            document.querySelectorAll(".popup.override button").forEach((button) => {
+                button.addEventListener("click", () => {
+                    popups[5].hide();
                 });
+            });
         },
     }),
 ];
