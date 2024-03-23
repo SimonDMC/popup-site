@@ -215,6 +215,12 @@ h2 {
     filter: drop-shadow(0 0 .2em #FFFFFF88);
 }
 
+.open-doc {
+    font-size: 0.8em;
+    margin-left: .4em;
+    translate: 0 1px;
+}
+
 /* if screen is less than 1:1 */
 @media (max-aspect-ratio: 1/1) {
     code#install {
